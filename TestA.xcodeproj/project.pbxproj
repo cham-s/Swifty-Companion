@@ -15,6 +15,7 @@
 		0CB145141D67C55400C69345 /* TestATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB145131D67C55400C69345 /* TestATests.swift */; };
 		0CB1451F1D67C55400C69345 /* TestAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1451E1D67C55400C69345 /* TestAUITests.swift */; };
 		0CB1452D1D67F99C00C69345 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1452C1D67F99C00C69345 /* SearchResult.swift */; };
+		6B545C541D68B179002E6910 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B545C531D68B179002E6910 /* SearchResultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0CB1451E1D67C55400C69345 /* TestAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAUITests.swift; sourceTree = "<group>"; };
 		0CB145201D67C55400C69345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CB1452C1D67F99C00C69345 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		6B545C531D68B179002E6910 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				0CB145001D67C55400C69345 /* SearchViewController.swift */,
 				0CB1452C1D67F99C00C69345 /* SearchResult.swift */,
 				0CB145021D67C55400C69345 /* Main.storyboard */,
+				6B545C531D68B179002E6910 /* SearchResultCell.xib */,
 				0CB145051D67C55400C69345 /* Assets.xcassets */,
 				0CB145071D67C55400C69345 /* LaunchScreen.storyboard */,
 				0CB1450A1D67C55400C69345 /* Info.plist */,
@@ -234,6 +237,7 @@
 			files = (
 				0CB145091D67C55400C69345 /* LaunchScreen.storyboard in Resources */,
 				0CB145061D67C55400C69345 /* Assets.xcassets in Resources */,
+				6B545C541D68B179002E6910 /* SearchResultCell.xib in Resources */,
 				0CB145041D67C55400C69345 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +492,7 @@
 				0CB145251D67C55400C69345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CB145261D67C55400C69345 /* Build configuration list for PBXNativeTarget "TestATests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				0CB145281D67C55400C69345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CB145291D67C55400C69345 /* Build configuration list for PBXNativeTarget "TestAUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				0CB1452B1D67C55400C69345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
