@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SearchViewController: UIViewController {
     
     // MARK: Properties
@@ -29,29 +30,32 @@ class SearchViewController: UIViewController {
         searchBar.becomeFirstResponder()
 
         tableView.rowHeight = 80
+        let secret = "fe60fe5064401bab287f8027e697b7cfc007862982e8e27f991261cd2db1474a"
+        let uid = "cd3644f0135943969746479d93790e10efbd77e15a4a51b37fb88ca8e509c9d9"
+        let url = "https://api.intra.42.fr/oauth/token"
+        let client = Client(uid: uid, secret: secret, url: url)
+        client.SetUpClient()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK - Methods
 }
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        searchResults = [SearchResult]()
         
-        if searchBar.text! != "justin" {
-            for i in 0...2 {
-                let searchResult = SearchResult()
-                searchResult.login = String(format: "Fake Result %d for", i)
-                searchResult.workingLocation = searchBar.text!
-                searchResults.append(searchResult)
-            }
+        if searchBar.text!.isEmpty {
+            searchBar.resignFirstResponder()
+            hasSearched = true
+            searchResults = [SearchResult]()
+            tableView.reloadData()
         }
-        hasSearched = true
-        tableView.reloadData();
+        
     }
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
@@ -74,8 +78,6 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        
         
         if searchResults.count == 0 {
             return tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifiers.nothingFoundCell, forIndexPath: indexPath)
