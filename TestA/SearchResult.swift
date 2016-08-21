@@ -7,6 +7,6 @@
 //
 
 class SearchResult {
-    var name = ""
-    var artistName = ""
+    var login = ""
+    var workingLocation = ""
 }

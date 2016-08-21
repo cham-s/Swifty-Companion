@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="hSm-LX-Ias">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="hSm-LX-Ias" customClass="SearchResultCell" customModule="TestA" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hSm-LX-Ias" id="PsF-IY-jg2">
@@ -45,7 +45,12 @@
                     <constraint firstItem="dnL-RS-M9B" firstAttribute="leading" secondItem="8A7-q2-b2u" secondAttribute="trailing" constant="15" id="wZE-Sv-jv2"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="467" y="386"/>
+            <connections>
+                <outlet property="locationLabel" destination="dnL-RS-M9B" id="LO6-BC-TJb"/>
+                <outlet property="loginLabel" destination="gwU-Xb-yBg" id="xep-ni-SwS"/>
+                <outlet property="studentImageView" destination="8A7-q2-b2u" id="8xc-sF-qRw"/>
+            </connections>
+            <point key="canvasLocation" x="526" y="320"/>
         </tableViewCell>
     </objects>
     <resources>
