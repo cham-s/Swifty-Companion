@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "416554ED7AD1B702FB65F901DCD85F33A7F39278",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "416554ED7AD1B702FB65F901DCD85F33A7F39278" : 0,
+    "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AFBC5560-7AF0-47EE-A9D4-4A11D2D45796",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "416554ED7AD1B702FB65F901DCD85F33A7F39278" : "TutoSession_IOS\/",
+    "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E" : "api\/OAuthSwift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TestA",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TestA.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:cham-s\/TutoSession_IOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "416554ED7AD1B702FB65F901DCD85F33A7F39278"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/OAuthSwift\/OAuthSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E"
+    }
+  ]
+}

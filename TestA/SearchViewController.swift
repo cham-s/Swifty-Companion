@@ -18,7 +18,7 @@ class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +30,22 @@ class SearchViewController: UIViewController {
         searchBar.becomeFirstResponder()
 
         tableView.rowHeight = 80
-        let secret = "fe60fe5064401bab287f8027e697b7cfc007862982e8e27f991261cd2db1474a"
-        let uid = "cd3644f0135943969746479d93790e10efbd77e15a4a51b37fb88ca8e509c9d9"
-        let url = "https://api.intra.42.fr/oauth/token"
-        let client = Client(uid: uid, secret: secret, url: url)
-        client.SetUpClient()
-        
+        let clientSession = ClientSession(uid: ClientKey.Uid, secret: ClientKey.Secret, authURL: ClientKey.AuthURL)
+        let auth = AuthInfo()
+        Helper.collectAuthInfo(clientSession) { (auth, error) -> Void in
+            if error != nil {
+                print(error)
+            } else {
+                if let authOk = auth {
+                    print(authOk.accessToken)
+                    print(authOk.scope)
+                    print(authOk.createdAt)
+                    print(authOk.expiresIn)
+                }
+            }
+            
+        }
+        print(auth.accessToken)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +54,7 @@ class SearchViewController: UIViewController {
     }
     
     // MARK - Methods
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
