@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Helper {
     class func parseJSON(jsonString: String) -> [String: AnyObject]? {
@@ -20,7 +21,7 @@ class Helper {
         }
     }
     
-    class func collectAuthInfo(client: ClientSession, callback: (auth: AuthInfo?, error: NSError?) -> Void){
+    class func collectAuthInfo(client: ClientSession, callback: (auth: AuthInfo?, error: NSError?) -> Void) {
         let formattedUrl = String(format: "%@?grant_type=client_credentials&client_id=%@&client_secret=%@", client.authURL, client.uid, client.secret)
         let requURL = NSURL(string: formattedUrl)!
         let request = NSMutableURLRequest(URL: requURL)
@@ -51,8 +52,23 @@ class Helper {
                 }
             })
             task.resume()
-            
         }
     }
+    
+    class func performStoreRequestWithURL(url: NSURL) -> String? {
+        do {
+            return try String(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+        } catch {
+            print("Download Eroor: \(error)")
+            return nil
+        }
+    }
+    
+    class func showNetworkError() {
+        let alert = UIAlertController(title: "Whoops...", message: "Error reading from 42. Please try again", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(action)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
 }
-

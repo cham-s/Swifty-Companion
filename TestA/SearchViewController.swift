@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     
     var searchResults = [SearchResult]()
     var hasSearched = false
+    var token = ""
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +32,6 @@ class SearchViewController: UIViewController {
 
         tableView.rowHeight = 80
         let clientSession = ClientSession(uid: ClientKey.Uid, secret: ClientKey.Secret, authURL: ClientKey.AuthURL)
-        let auth = AuthInfo()
         Helper.collectAuthInfo(clientSession) { (auth, error) -> Void in
             if error != nil {
                 print(error)
@@ -41,11 +41,10 @@ class SearchViewController: UIViewController {
                     print(authOk.scope)
                     print(authOk.createdAt)
                     print(authOk.expiresIn)
+                    
                 }
             }
-            
         }
-        print(auth.accessToken)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,14 +58,12 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        
         if searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             hasSearched = true
             searchResults = [SearchResult]()
             tableView.reloadData()
         }
-        
     }
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
@@ -101,7 +98,6 @@ extension SearchViewController: UITableViewDataSource {
             cell.locationLabel.text = searchResult.workingLocation
             return cell
         }
-        
     }
     
     // MARK - structs
@@ -124,6 +120,3 @@ extension SearchViewController: UITableViewDelegate {
         }
     }
 }
-
-
-
