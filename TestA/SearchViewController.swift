@@ -91,7 +91,7 @@ extension SearchViewController: UISearchBarDelegate {
                     if let error = error {
                         print("error: \(error)")
                     }
-                    else if let httpResponse = response as? x where httpResponse.statusCode == 200 {
+                    else if let httpResponse = response as? NSHTTPURLResponse where httpResponse.statusCode == 200 {
                         let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
                         if let result = dataString {
                             if let dictionary = Helper.parseJSON(result) {
